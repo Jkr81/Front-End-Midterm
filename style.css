@@ -47,27 +47,41 @@ header {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    max-width: 1100px;
-    margin: auto;
-    padding: 18px 5%;
+
+    width: 100%;
+    padding: 18px 3%;
 }
 
 .nav-grid h2 {
     margin: 0;
     font-size: 1.2rem;
     color: #cc0000;
+    text-align: left;
+    justify-self: start;
 }
 
-.nav-grid a {
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.nav-links a {
     color: white;
     text-align: center;
     text-decoration: none;
 }
 
-.nav-grid a:hover {
+.nav-links a:hover {
     color: #cc0000;
+}
+
+.nav-phone {
+    justify-self: end;
+    color: #cc0000;
+    font-size: 1.6rem;
 }
 
 
@@ -323,6 +337,10 @@ footer {
     .evidence-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .nav-links {
+        gap: 25px;
+    }
 }
 
 
@@ -332,12 +350,22 @@ footer {
 
     .nav-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 10px;
         text-align: center;
     }
 
     .nav-grid h2 {
+        justify-self: center;
         text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .nav-phone {
+        display: none;
     }
 
     section {
