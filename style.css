@@ -35,7 +35,6 @@ p {
 }
 
 
-/* NAV */
 
 header {
     position: sticky;
@@ -85,7 +84,6 @@ header {
 }
 
 
-/* GENERAL */
 
 section {
     padding: 70px 7%;
@@ -123,15 +121,12 @@ button:disabled {
 }
 
 
-/* PREVIOUS AND NEXT */
 
 .story-buttons {
     display: flex;
     gap: 12px;
 }
 
-
-/* HOME */
 
 .hero {
     min-height: calc(100vh - 65px);
@@ -146,8 +141,6 @@ button:disabled {
     filter: grayscale(100%);
 }
 
-
-/* STORY */
 
 #story {
     min-height: calc(100vh - 65px);
@@ -182,7 +175,6 @@ button:disabled {
 }
 
 
-/* PHONE CALL */
 
 #call {
     display: none;
@@ -229,8 +221,6 @@ button:disabled {
 }
 
 
-/* SURPRISE */
-
 #surprise {
     display: none;
     min-height: calc(100vh - 65px);
@@ -255,8 +245,6 @@ button:disabled {
     height: 400px;
 }
 
-
-/* ENDING */
 
 #ending,
 #finalScreen,
@@ -283,8 +271,6 @@ button:disabled {
 }
 
 
-/* EVIDENCE */
-
 .evidence-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -309,8 +295,6 @@ button:disabled {
 }
 
 
-/* FOOTER */
-
 footer {
     display: flex;
     justify-content: space-between;
@@ -318,8 +302,6 @@ footer {
     background: black;
 }
 
-
-/* TABLET */
 
 @media (max-width: 800px) {
 
@@ -343,8 +325,6 @@ footer {
     }
 }
 
-
-/* PHONE */
 
 @media (max-width: 600px) {
 
