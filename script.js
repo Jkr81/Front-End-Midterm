@@ -1,378 +1,566 @@
 
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: #0b0b0b;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-}
-
-img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-h1 {
-    font-size: 6rem;
-    line-height: .9;
-}
-
-h2 {
-    font-size: 3rem;
-}
-
-p {
-    color: #cccccc;
-}
-
-
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: black;
-    border-bottom: 1px solid #333333;
-}
-
-.nav-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-
-    width: 100%;
-    padding: 18px 3%;
-}
-
-.nav-grid h2 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #cc0000;
-    text-align: left;
-    justify-self: start;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-}
-
-.nav-links a {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #cc0000;
-}
-
-.nav-phone {
-    justify-self: end;
-    color: #cc0000;
-    font-size: 1.6rem;
-}
-
-
-
-section {
-    padding: 70px 7%;
-    scroll-margin-top: 65px;
-}
-
-.red-text,
-#location,
-#callSpeaker {
-    color: #cc0000;
-    letter-spacing: 2px;
-}
-
-button,
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 24px;
-    border: none;
-    background: #a00000;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-button:hover,
-.button:hover {
-    background: #d00000;
-}
-
-button:disabled {
-    background: #333333;
-    color: #777777;
-    cursor: default;
-}
-
-
-
-.story-buttons {
-    display: flex;
-    gap: 12px;
-}
-
-
-.hero {
-    min-height: calc(100vh - 65px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.hero img {
-    height: 600px;
-    filter: grayscale(100%);
-}
-
-
-#story {
-    min-height: calc(100vh - 65px);
-    background: #111111;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.story-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.story-grid img {
-    height: 420px;
-}
-
-.story-text {
-    min-height: 320px;
-}
-
-#speaker,
-#surpriseSpeaker {
-    font-size: 2rem;
-}
-
-#storyLine,
-#surpriseText {
-    font-size: 1.1rem;
-}
-
-
-
-#call {
-    display: none;
-    min-height: calc(100vh - 65px);
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.call-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.phone {
-    padding: 50px 25px;
-    background: #050505;
-    border: 3px solid #333333;
-    border-radius: 30px;
-    text-align: center;
-}
-
-.phone-icon {
-    margin: 30px;
-    color: #cc0000;
-    font-size: 5rem;
-}
-
-.conversation {
-    min-height: 300px;
-    padding: 40px;
-    background: #181818;
-    border-left: 4px solid #cc0000;
-}
-
-.conversation h3 {
-    font-size: 2rem;
-}
-
-#callNext,
-#callPrevious {
-    display: none;
-}
-
-
-#surprise {
-    display: none;
-    min-height: calc(100vh - 65px);
-    background: #111111;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-#surprise h2 {
-    font-size: 5rem;
-    margin-top: 0;
-}
-
-.surprise-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.surprise-grid img {
-    height: 400px;
-}
-
-
-#ending,
-#finalScreen,
-#evidence {
-    display: none;
-}
-
-#ending {
-    min-height: calc(100vh - 65px);
-    text-align: center;
-    padding-top: 120px;
-}
-
-#finalScreen {
-    min-height: 100vh;
-    padding-top: 180px;
-    text-align: center;
-    background: black;
-}
-
-#finalScreen p {
-    color: #cc0000;
-    letter-spacing: 5px;
-}
-
-
-.evidence-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.card {
-    padding: 15px;
-    background: #151515;
-    border-top: 3px solid #a00000;
-}
-
-.card img {
-    height: 250px;
-    filter: grayscale(100%);
-}
-
-.restart-area {
-    text-align: center;
-    margin-top: 50px;
-}
-
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 7%;
-    background: black;
-}
-
-
-@media (max-width: 800px) {
-
-    h1 {
-        font-size: 4rem;
+history.scrollRestoration = "manual";
+
+window.onload = function () {
+    window.scrollTo(0, 0);
+};
+
+
+// STORY
+
+let image = document.getElementById("storyImage");
+let locationText = document.getElementById("location");
+let speaker = document.getElementById("speaker");
+let storyLine = document.getElementById("storyLine");
+
+let previous = document.getElementById("previous");
+let next = document.getElementById("next");
+
+let current = -1;
+
+
+let story = [
+
+    ["ACTION",
+    "BENJI sits in his bedroom at his desk with a COMPUTER and a KEY, planning his day as Rockwell's \"Somebody's Watching Me\" plays softly in the background. His roommate, STERLING, walks into the room wearing a black hoodie.",
+    "images/bedroom.jpg"],
+
+    ["STERLING",
+    "Yo Benji, happy birthday. What you got planned today?",
+    "images/bedroom.jpg"],
+
+    ["ACTION",
+    "Benji doesn't answer immediately as he is focused on the calendar that he has pulled up on his COMPUTER.",
+    "images/calendar.jpg"],
+
+    ["BENJI",
+    "Hey man, sorry, thank you. My week's kind of crazy. Im just trying to get ahead of it.",
+    "images/calendar.jpg"],
+
+    ["ACTION",
+    "Sterling walks over to Benji's leaning over to take a look at the computer. The calendar for Benji's week is crammed with random activities and to-dos for every day of the week.",
+    "images/calendar.jpg"],
+
+    ["STERLING",
+    "You really do have a lot going on this week.",
+    "images/calendar.jpg"],
+
+    ["ACTION",
+    "Sterling notices a recurring event on the calendar titled 3 Minute bathroom break.",
+    "images/calendar.jpg"],
+
+    ["STERLING",
+    "Don't you think planning out when you have to go to the bathroom is a bit much?",
+    "images/calendar.jpg"],
+
+    ["BENJI",
+    "No, I don't.",
+    "images/calendar.jpg"],
+
+    ["STERLING",
+    "Ok, well, do you have time in your schedule for us to go golfing around 4 today?",
+    "images/calendar.jpg"],
+
+    ["ACTION",
+    "Benji looks at his calendar and says that he will be studying from 4-9.",
+    "images/calendar.jpg"],
+
+    ["BENJI",
+    "Sorry, I can't. I'm going to be studying then. But maybe sometime next week.",
+    "images/calendar.jpg"],
+
+    ["STERLING",
+    "Studying on your birthday. That's not how I would spend my day, but you do you, man. When will you be back?",
+    "images/bedroom.jpg"],
+
+    ["BENJI",
+    "Around 9, I think.",
+    "images/bedroom.jpg"],
+
+    ["ACTION",
+    "An ALARM on Benji's phone goes off that reads bathroom break 1.",
+    "images/alarm.jpg"],
+
+    ["ACTION",
+    "Benji gets up and walks into the bathroom. Sterling looks over Benji's calendar one more time while pulling out his PHONE and sending a text.",
+    "images/calendar.jpg"],
+
+    ["ACTION",
+    "Benji comes out of the bathroom.",
+    "images/bedroom.jpg"],
+
+    ["STERLING",
+    "You leaving?",
+    "images/bedroom.jpg"],
+
+    ["BENJI",
+    "Yeah, I'm off but I'll be back later today.",
+    "images/bedroom.jpg"],
+
+    ["ACTION",
+    "Benji walks out of the dorm/apartment, leaving his key on his desk.",
+    "images/key.jpg"],
+
+    ["ACTION",
+    "Benji sits at a study room desk with a computer, notebook, and pencil in front of him. He picks up his phone, and it reads 8:15.",
+    "images/study.jpg"],
+
+    ["BENJI",
+    "Looks like I might finish up early.",
+    "images/study.jpg"],
+
+    ["ACTION",
+    "Benji sends a text to Sterling telling him that he will be back earlier than expected. His phone starts to ring, and the screen says UNKNOWN CALLER. Benji picks up the phone.",
+    "images/phone.jpg"]
+
+];
+
+
+function showStory() {
+
+    speaker.innerHTML = story[current][0];
+    storyLine.innerHTML = story[current][1];
+    image.src = story[current][2];
+
+    if (current >= 20) {
+        locationText.innerHTML = "INT. STUDY ROOM - NIGHT";
+    } else {
+        locationText.innerHTML = "INT. APARTMENT/DORM - MORNING";
     }
 
-    .hero,
-    .story-grid,
-    .call-grid,
-    .surprise-grid {
-        grid-template-columns: 1fr;
-    }
+    previous.disabled = current <= 0;
+}
 
-    .evidence-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 
-    .nav-links {
-        gap: 25px;
+function nextStory() {
+
+    if (current < story.length - 1) {
+
+        current++;
+        showStory();
+
+    } else {
+
+        next.style.display = "none";
+        previous.style.display = "none";
+
+        document.getElementById("call").style.display = "block";
+
+        document.getElementById("call").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
     }
 }
 
 
-@media (max-width: 600px) {
+function previousStory() {
 
-    .nav-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .nav-grid h2 {
-        justify-self: center;
-        text-align: center;
-    }
-
-    .nav-links {
-        justify-content: center;
-        gap: 25px;
-    }
-
-    .nav-phone {
-        display: none;
-    }
-
-    section {
-        padding: 60px 5%;
-        scroll-margin-top: 150px;
-    }
-
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    h2,
-    #surprise h2 {
-        font-size: 2.5rem;
-    }
-
-    .hero img,
-    .story-grid img,
-    .surprise-grid img {
-        height: 350px;
-    }
-
-    .evidence-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .story-buttons {
-        flex-wrap: wrap;
+    if (current > 0) {
+        current--;
+        showStory();
     }
 }
+
+
+next.addEventListener("click", nextStory);
+previous.addEventListener("click", previousStory);
+
+
+let callSpeaker = document.getElementById("callSpeaker");
+let callText = document.getElementById("callText");
+
+let answer = document.getElementById("answer");
+let callPrevious = document.getElementById("callPrevious");
+let callNext = document.getElementById("callNext");
+
+let callNumber = 0;
+
+
+let call = [
+
+    ["BENJI", "Hello?"],
+
+    ["ACTION",
+    "The Unknown Caller is completely silent and ignores Benji. The Unknown Caller then starts breathing heavily."],
+
+    ["UNKOWN CALLER",
+    "Hello Benji."],
+
+    ["BENJI",
+    "Who is this?"],
+
+    ["ACTION",
+    "The Unknown Callers' voice is deep and sounds maniacal."],
+
+    ["UNKNOWN CALLER",
+    "Just your biggest fan. I wanted to call and wish you a happy birthday. (laughs)"],
+
+    ["BENJI",
+    "Um, thank you? This is weird, so I think I'm going to hang up now."],
+
+    ["UNKNOWN CALLER",
+    "Wait, don't..."],
+
+    ["ACTION",
+    "Benji hangs up the phone, not taking the call very seriously. The phone rings again with Unknown Caller written on the screen."],
+
+    ["BENJI",
+    "Hello?"],
+
+    ["UNKNOWN CALLER",
+    "Hi Benji, I was not done talking to you."],
+
+    ["BENJI",
+    "Ok man, what do you want?"],
+
+    ["UNKNOWN CALLER",
+    "I wanted to ask you what your favorite scary movie?"],
+
+    ["BENJI",
+    "If you're genuinely asking, I would have to say I don't know. But scream definitely ranks pretty low on that list."],
+
+    ["ACTION",
+    "Benji starts to laugh now, thinking that the whole thing is a prank."],
+
+    ["BENJI",
+    "Oh, I get it now, you have an unknown caller ID and a deep voice. Whoever this is, you need to knock it off. Alright, prank over. It isn't funny anymore."],
+
+    ["UNKNOWN CALLER",
+    "If I'm pulling a prank, then how do I know what you had and where you went for lunch today?"],
+
+    ["ACTION",
+    "Benji gets an alert on his computer. It is an air-dropped picture of him eating lunch earlier that day."],
+
+    ["BENJI",
+    "Who are you and when did you take that? (Freigtehned)"],
+
+    ["ACTION",
+    "Benji drops his phone and picks up his pencil to use it as a weapon."],
+
+    ["BENJI",
+    "If you're trying to hurt me, you should know I boxed for 5 years, and my mom's an FBI agent, so she will find you."],
+
+    ["UNKNOWN CALLER",
+    "Then why are you shaking? I can see your hands."],
+
+    ["UNKNOWN CALLER",
+    "And your mom, April, works at the bakery on Waller Street. She closes at 8, right?"],
+
+    ["ACTION",
+    "The Unknown Caller ends the call. Benji frantically stands up and grabs his phone. The door of the study room starts to jiggle."],
+
+    ["ACTION",
+    "Benji makes his way towards the door, and just as he is about to open it, his computer starts to ring."],
+
+    ["ACTION",
+    "It is a video call, and the screen name reads Unknown Caller. Benji walks back to the computer and answers the call."],
+
+    ["UNKNOWN CALLER",
+    "Benji, do you want to play a game?"],
+
+    ["ACTION",
+    "The screen is dark but you can see a figure in a black hoodie with no face."],
+
+    ["UNKNOWN CALLER",
+    "How about hide and seek? If I were you, I would start running."]
+
+];
+
+
+function showCall() {
+
+    callSpeaker.innerHTML = call[callNumber][0];
+    callText.innerHTML = call[callNumber][1];
+
+    callPrevious.disabled = callNumber === 0;
+}
+
+
+answer.addEventListener("click", function () {
+
+    document.getElementById("callStatus").innerHTML =
+        "CALL CONNECTED";
+
+    callNumber = 0;
+    showCall();
+
+    answer.style.display = "none";
+
+    callPrevious.style.display = "inline-block";
+    callNext.style.display = "inline-block";
+});
+
+
+callNext.addEventListener("click", function () {
+
+    if (callNumber < call.length - 1) {
+
+        callNumber++;
+        showCall();
+
+    } else {
+
+        document.getElementById("call").style.display = "none";
+
+        startHallway();
+    }
+});
+
+
+callPrevious.addEventListener("click", function () {
+
+    if (callNumber > 0) {
+        callNumber--;
+        showCall();
+    }
+});
+
+
+
+let hallwayNumber = 0;
+
+
+let hallway = [
+
+    ["ACTION",
+    "The call ends, and Benji frantically packs up all of his things, leaving the study room."],
+
+    ["ACTION",
+    "Benji knocks on his apartment door, but there is no response. He pulls out his phone and calls Sterling."],
+
+    ["BENJI",
+    "Hey, I need you to open the apartment door. I left my key inside, and I'm 100 percent sure someone is trying to kill me."],
+
+    ["V.O (STERLING)",
+    "Dude, I'm not there right now. I'm out getting food with some friends. Wait, I gotta go."],
+
+    ["ACTION",
+    "Suddenly, the apartment door opens from the inside. There are no lights on. Benji slowly walks inside."]
+
+];
+
+
+function showHallway() {
+
+    speaker.innerHTML = hallway[hallwayNumber][0];
+    storyLine.innerHTML = hallway[hallwayNumber][1];
+
+    previous.disabled = hallwayNumber === 0;
+}
+
+
+function startHallway() {
+
+    hallwayNumber = 0;
+
+    locationText.innerHTML =
+        "INT. APARTMENT/DORM HALLWAY - NIGHT";
+
+    image.src = "images/hallway.jpg";
+
+    next.style.display = "inline-block";
+    previous.style.display = "inline-block";
+
+    next.innerHTML = "NEXT";
+
+    next.removeEventListener("click", nextStory);
+    previous.removeEventListener("click", previousStory);
+
+    next.addEventListener("click", nextHallway);
+    previous.addEventListener("click", previousHallway);
+
+    showHallway();
+
+    document.getElementById("story").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+
+function nextHallway() {
+
+    if (hallwayNumber < hallway.length - 1) {
+
+        hallwayNumber++;
+        showHallway();
+
+    } else {
+
+        next.style.display = "none";
+        previous.style.display = "none";
+
+        document.getElementById("surprise").style.display =
+            "block";
+
+        document.getElementById("surprise").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+}
+
+
+function previousHallway() {
+
+    if (hallwayNumber > 0) {
+        hallwayNumber--;
+        showHallway();
+    }
+}
+
+
+let surpriseNumber = 0;
+
+let surprisePrevious =
+    document.getElementById("surprisePrevious");
+
+let surpriseNext =
+    document.getElementById("surpriseNext");
+
+
+let surprise = [
+
+    ["STERLING AND FRIENDS",
+    "Surprise!!"],
+
+    ["ACTION",
+    "Benji Screams."],
+
+    ["BENJI",
+    "WHAT THE HELL, GUYS."],
+
+    ["STERLING",
+    "It's your surprise birthday party. So what do you think?"],
+
+    ["ACTION",
+    "Benji notices the black hoodie that Sterling is wearing."],
+
+    ["BENJI",
+    "That was you?"],
+
+    ["BENJI",
+    "You scared the shit out of me. I thought I was going to die."],
+
+    ["STERLING",
+    "You weren't supposed to come back early. (half-smiling)"],
+
+    ["ACTION",
+    "Benji sighs and grabs a party hat."],
+
+    ["BENJI",
+    "Thank you, but never do that again."]
+
+];
+
+
+function showSurprise() {
+
+    document.getElementById("surpriseSpeaker").innerHTML =
+        surprise[surpriseNumber][0];
+
+    document.getElementById("surpriseText").innerHTML =
+        surprise[surpriseNumber][1];
+
+    surprisePrevious.disabled = surpriseNumber === 0;
+}
+
+
+surpriseNext.addEventListener("click", function () {
+
+    if (surpriseNumber < surprise.length - 1) {
+
+        surpriseNumber++;
+        showSurprise();
+
+    } else {
+
+        surpriseNext.style.display = "none";
+        surprisePrevious.style.display = "none";
+
+        document.getElementById("ending").style.display =
+            "block";
+
+        document.getElementById("ending").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+});
+
+
+surprisePrevious.addEventListener("click", function () {
+
+    if (surpriseNumber > 0) {
+        surpriseNumber--;
+        showSurprise();
+    }
+});
+
+
+
+document.getElementById("endButton")
+.addEventListener("click", function () {
+
+    document.getElementById("finalScreen").style.display =
+        "block";
+
+    document.getElementById("evidence").style.display =
+        "block";
+
+    document.getElementById("finalScreen").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+});
+
+
+
+document.getElementById("restart")
+.addEventListener("click", function () {
+
+    current = 0;
+    callNumber = 0;
+    hallwayNumber = 0;
+    surpriseNumber = 0;
+
+    document.getElementById("call").style.display = "none";
+    document.getElementById("surprise").style.display = "none";
+    document.getElementById("ending").style.display = "none";
+    document.getElementById("finalScreen").style.display = "none";
+    document.getElementById("evidence").style.display = "none";
+
+    next.removeEventListener("click", nextHallway);
+    previous.removeEventListener("click", previousHallway);
+
+    next.addEventListener("click", nextStory);
+    previous.addEventListener("click", previousStory);
+
+    next.style.display = "inline-block";
+    previous.style.display = "inline-block";
+
+    surpriseNext.style.display = "inline-block";
+    surprisePrevious.style.display = "inline-block";
+
+    answer.style.display = "inline-block";
+    callNext.style.display = "none";
+    callPrevious.style.display = "none";
+
+    document.getElementById("callStatus").innerHTML =
+        "INCOMING CALL...";
+
+    callSpeaker.innerHTML = "PHONE";
+    callText.innerHTML = "...";
+
+    locationText.innerHTML =
+        "INT. APARTMENT/DORM - MORNING";
+
+    showStory();
+    showSurprise();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
